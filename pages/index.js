@@ -15,7 +15,7 @@ export default function Home() {
         }}
         weight="bold"
       >
-        Create Todo's
+        Create Todos
       </Text>
       <Text
         h1

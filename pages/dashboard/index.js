@@ -75,7 +75,7 @@ function Dashboard({ todos: TODOS }) {
       )}
       <Grid.Container gap={2} alignItems='flex-start'>
         {todos.map(todo => (
-          <Grid sm={6} xs={12} md={4}>
+          <Grid key={JSON.stringify(todo)} sm={6} xs={12} md={4}>
             <Card shadow={false} color={'default'} bordered>
               <Grid.Container justify='space-between' wrap='nowrap' alignItems='flex-start'>
                 <Text

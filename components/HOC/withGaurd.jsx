@@ -1,11 +1,11 @@
+import { excludedInputPropsForTextarea } from "@nextui-org/react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 const withGaurd = (WrappedComponent) => {
-    return (props) => {
+    return function Component(props) {
+        const router = useRouter();
         const { data:session } = useSession();
-
         if (typeof window !== "undefined") {
-            const router = useRouter();
             if (!session) {
                 router.replace("/");
                 return null;
@@ -15,4 +15,5 @@ const withGaurd = (WrappedComponent) => {
         return null;
     };
 };
-export default withGaurd;
+withGaurd.displayName = 'withGaurd';
+export default withGaurd
